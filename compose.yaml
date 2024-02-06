@@ -21,7 +21,6 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
-      SECRET_KEY_BASE: skmaldmalk;mdlsakndjkasndaskjdmlamdalkdnakldmakldmaldkmald
     # ホストのカレントディレクトリ(.)とイメージ内の/myappディレクトリを同期させている
     volumes:
       - .:/myapp
