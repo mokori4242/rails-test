@@ -6,6 +6,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
+      POSTGRES_DB: myapp_development
     # 無くても動くけど指定しておくとdocker-composeを停止してもdbの内容が永続化されるため、指定することが多いと思われる
     # https://matsuand.github.io/docs.docker.jp.onthefly/storage/volumes/
     volumes:
@@ -19,8 +20,7 @@ services:
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     # 上記のdbイメージで指定したユーザー名とパスワードをrails側でも指定するため環境変数に設定。
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      DATABASE_URL: postgresql://postgres:password@db/myapp_development
     # ホストのカレントディレクトリ(.)とイメージ内の/myappディレクトリを同期させている
     volumes:
       - .:/myapp
