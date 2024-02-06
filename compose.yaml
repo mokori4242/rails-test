@@ -23,7 +23,7 @@ services:
       DATABASE_URL: postgresql://postgres:password@db/myapp_development
     # ホストのカレントディレクトリ(.)とイメージ内の/myappディレクトリを同期させている
     volumes:
-      - .:/myapp
+      - .:/rails
     ports:
       - "3000:3000"
     restart: always # コンテナが停止すると常に再起動
