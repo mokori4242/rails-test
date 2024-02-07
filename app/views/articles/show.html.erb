@@ -2,4 +2,7 @@
 
 <p><%= @article.body %></p>
 
-<a href="/">戻る</a>
+<ul>
+  <li><%= link_to "編集", edit_article_path(@article) %></li>
+  <li><a href="/">戻る</a></li>
+</ul>
