@@ -20,8 +20,8 @@ log-db:
 	docker compose logs db
 log-db-watch:
 	docker compose logs --follow db
-login-web:
+web:
 	docker compose exec web bash
-login-db:
+db:
 	docker compose exec db bash
 
